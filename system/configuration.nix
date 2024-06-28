@@ -2,14 +2,63 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config,
+  pkgs, 
+  inputs, 
+  outputs, 
+  lib,
+  ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include home manager
+      inputs.home-manager.nixosModules.home-manager
+
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
+
+  # Configure nix pakages and overlays
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # If you want to use overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+    };
+  };
+
+  # Configure nix and allow flakse
+  nix = let
+    # flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  in {
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Opinionated: disable global registry
+      # flake-registry = "";
+      # Workaround for https://github.com/NixOS/nix/issues/9574
+      nix-path = config.nix.nixPath;
+    };
+    # Opinionated: disable channels
+    # channel.enable = false;
+
+    # Opinionated: make flake registry and nix path match flake inputs
+    # registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    # nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,46 +134,17 @@
     description = "Colt Whitley";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  
-  # Coltw packages installed with home-manager
-  home-manager.users.coltw = { pkgs, ... }: {
-    home.packages = [
-      # Coding packages
-      pkgs.neovim
-      pkgs.gh
-
-      # Packages used for encrypting secrets in dotfiles
-      pkgs.git-crypt
-      pkgs.gnupg
-      pkgs.pinentry-curses
-    ];
-
-    programs.git = {
-      enable = true;
-      userName = "Colt Whitley";
-      userEmail = "coltwhitley3@gmail.com";
+ 
+  # Set up home manager as a module
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs; };
+    users = {
+      coltw = import ../users/coltw/home.nix;
     };
-
-    # Enable gpg key generation
-    programs.gpg = {
-      enable = true;
-    };
-
-    # Enable pin entry ang gpg key agent
-    services.gpg-agent = {
-      enable = true;
-      pinentryPackage = pkgs.pinentry-curses;
-    };
-
-    # Do not change!
-    home.stateVersion = "24.05";
-  }; 
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
