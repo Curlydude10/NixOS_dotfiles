@@ -2,7 +2,8 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./options.nix
-  ];
+    ./plugins
+ ];
 
   programs.nixvim = {
     # Enable and set to default editor
