@@ -4,6 +4,7 @@
 }:
 {
   #imports = [
+  #  ./stylix
   #];
   
   # Add gui packages

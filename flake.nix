@@ -16,12 +16,19 @@
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -32,7 +39,10 @@
       Zeus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix];
+        modules = [
+          ./nixos/configuration.nix
+          stylix.nixosModules.stylix
+        ];
       };
     };
   };

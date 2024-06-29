@@ -18,6 +18,9 @@
       # Inlcude Password Manager
       ./programs/onepass.nix
 
+      # Add system wide theme
+      ./themes
+
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
@@ -144,6 +147,9 @@
     users = {
       coltw = import ../home/hosts/Zeus;
     };
+
+    # Needed to make stylix work
+    backupFileExtension = "backup";
   };
 
   # Install firefox.
