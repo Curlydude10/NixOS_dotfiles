@@ -41,36 +41,6 @@
     homeDirectory = "/home/coltw";
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  #home.packages = with pkgs; [ 
-    #Coding Packages
-  #  gh
-
-  #  # Git Encryption Packages
-  #  git-crypt
-  #  gnupg
-  #  pinentry-curses
-  #];
-
-  # Enable and setup git
-  programs.git = {
-    enable = true;
-    userName = "Colt Whitley";
-    userEmail = "coltwhitley3@gmail.com";
-  };
-  
-  # Enable gpg key generation
-  programs.gpg = {
-    enable = true;
-  };
-
-  # Enable pin entry and gpg key agent
-  services.gpg-agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
-  };
-
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
