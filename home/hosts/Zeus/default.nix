@@ -10,8 +10,7 @@
   # You can import other home-manager modules here
   imports = [
     # Broken up parts of my user configuration 
-    ./shells
-    ./editors
+    ../../modules/tui
   ];
 
   nixpkgs = {

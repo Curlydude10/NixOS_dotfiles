@@ -139,7 +139,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs; };
     users = {
-      coltw = import ../users/coltw/home.nix;
+      coltw = import ../home/hosts/Zeus;
     };
   };
 
