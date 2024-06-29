@@ -11,6 +11,9 @@
   imports = [
     # Import all my text based applications and settings
     ../../modules/tui
+
+    # Import all my graphics based applications
+    ../../modules/gui
   ];
 
   nixpkgs = {
