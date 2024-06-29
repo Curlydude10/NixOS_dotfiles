@@ -15,6 +15,9 @@
     # Coding Packages
     gh # git hub cli
 
+    # Terminal Emulators
+    kitty # Modern customizable terminal editor
+
     # Git Encryption Packages
     git-crypt # Encrypt repos
     gnupg # Generate keys
