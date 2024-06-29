@@ -15,6 +15,9 @@
       # Include home manager
       inputs.home-manager.nixosModules.home-manager
 
+      # Inlcude Password Manager
+      ./programs/onepass.nix
+
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];

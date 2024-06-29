@@ -3,7 +3,8 @@
   ...
 }:
 {
-#  imports = [];
+  #imports = [
+  #];
   
   # Add gui packages
   home.packages = with pkgs; [
