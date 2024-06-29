@@ -46,7 +46,6 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [ 
     #Coding Packages
-    neovim
     gh
 
     # Git Encryption Packages
