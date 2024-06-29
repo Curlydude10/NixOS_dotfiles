@@ -3,7 +3,7 @@ let
  # Set Bash Aliases
  myAliases = {
    vim = "nvim";
-   ls = "ls -l";
+   ls = "ls -l --color";
  };
 in
 {
