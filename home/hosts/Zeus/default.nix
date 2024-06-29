@@ -9,7 +9,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # Broken up parts of my user configuration 
+    # Import all my text based applications and settings
     ../../modules/tui
   ];
 
@@ -43,15 +43,15 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [ 
+  #home.packages = with pkgs; [ 
     #Coding Packages
-    gh
+  #  gh
 
-    # Git Encryption Packages
-    git-crypt
-    gnupg
-    pinentry-curses
-  ];
+  #  # Git Encryption Packages
+  #  git-crypt
+  #  gnupg
+  #  pinentry-curses
+  #];
 
   # Enable and setup git
   programs.git = {
