@@ -4,6 +4,7 @@ let
  myAliases = {
    vim = "nvim";
    ls = "ls -l --color";
+   ".." = "cd ..";
  };
 in
 {

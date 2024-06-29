@@ -153,6 +153,13 @@
     git
   ];
 
+  # Add some general nerdfonts system wide
+  fonts.packages = with pkgs; [
+    # Overwrite not not install all fonts per
+    # https://nixos.wiki/wiki/Fonts
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

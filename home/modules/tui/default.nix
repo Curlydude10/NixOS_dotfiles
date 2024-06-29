@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ./shells # Bash Settings
+    ./terminal # Terminal Emulator and Bash Settings
     ./neovim # Neovim config
     ./git.nix # Git config
     ./gpg.nix # Gpg key config
