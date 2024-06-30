@@ -2,6 +2,7 @@
   imports = [
     ./lsp.nix # Configure lsp servers
     ./cmp.nix
+    ./treesitter.nix
   ];
 
   # Plugin Configuration
@@ -16,3 +17,4 @@
     };
   };
 }
+
