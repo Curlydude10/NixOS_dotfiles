@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  
+ 
   outputs = {
     self,
     nixpkgs,
