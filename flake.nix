@@ -17,11 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Stylix
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Stylix was not working well, removed but might add again in the future
+    # stylix = {
+    #  url = "github:danth/stylix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = {
@@ -41,7 +41,7 @@
         # > Our main nixos configuration file <
         modules = [
           ./nixos/configuration.nix
-          stylix.nixosModules.stylix
+          # stylix.nixosModules.stylix see above note
         ];
       };
     };

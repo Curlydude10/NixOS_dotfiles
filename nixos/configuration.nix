@@ -18,8 +18,8 @@
       # Inlcude Password Manager
       ./programs/onepass.nix
 
-      # Add system wide theme
-      ./themes
+      # Stylix was breaking more things that it was configuring 
+      # ./themes
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
