@@ -41,6 +41,8 @@
         # > Our main nixos configuration file <
         modules = [
           ./nixos/configuration.nix
+
+          # include stylix flake also
           stylix.nixosModules.stylix 
         ];
       };
