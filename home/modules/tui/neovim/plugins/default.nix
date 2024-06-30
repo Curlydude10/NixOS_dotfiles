@@ -1,6 +1,8 @@
 {
-  #inputs = [
-  #];
+  imports = [
+    ./lsp.nix # Configure lsp servers
+    ./cmp.nix
+  ];
 
   # Plugin Configuration
   programs.nixvim = {
