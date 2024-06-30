@@ -1,4 +1,3 @@
-{ config, pkgs, ...}:
 let
  # Set Bash Aliases
  myAliases = {

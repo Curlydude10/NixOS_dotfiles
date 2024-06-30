@@ -71,7 +71,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "Zeus"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -126,8 +126,8 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
+    # use the example session manager (no others are packaged yet so this is
+    # enabled by default, no need to redefine it in your config for now)
     #media-session.enable = true;
   };
 
@@ -158,7 +158,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! 
     git
   ];
 

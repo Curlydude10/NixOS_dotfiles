@@ -10,13 +10,16 @@
       number = true; # Display absolute number of current line
 
       # Tab Options 
-      tabstop = 4; # Number of spaces a <Tab> in the text stands for (local to buffer)
-      shiftwidth = 4; # Number of spaces used for each step of (auto)indent (local to buffer)
-      expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
+      tabstop = 4; # Number of spaces a <Tab> stands for (local to buffer)
+      shiftwidth = 4; # Number of spaces used for (auto)indent 
+      expandtab = true; # Expand <Tab> to spaces in Insert mode 
       autoindent = true; # Do clever autoindenting
 
       # Folding 
       foldlevel = 99; # Folds higher than this will be closed
+
+      # Character limit
+      cc = "80";
       }; 
   };
 }
