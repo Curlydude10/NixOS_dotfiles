@@ -3,6 +3,7 @@
     ./lsp.nix # Configure lsp servers
     ./cmp.nix
     ./treesitter.nix
+    ./lualine.nix
   ];
 
   # Plugin Configuration
