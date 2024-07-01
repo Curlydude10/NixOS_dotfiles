@@ -20,6 +20,10 @@
 
       # Character limit
       cc = "80";
+
+      # Saves
+      swapfile = false; # Disable swapfile
+      undofile = true; # Automatically save and restore undo history
       }; 
   };
 }

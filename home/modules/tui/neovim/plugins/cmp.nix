@@ -24,8 +24,7 @@
             cmp_tabby = "[Tabby]";
           };
         };
-      };
-
+      }; 
 
       cmp = {
         enable = true;
@@ -34,6 +33,18 @@
           # Set luasnip as desire snippet plugin
           snippet.expand = 
             "function(args) require('luasnip').lsp_expand(args.body) end";
+
+          # Setup maping for using autocomplete
+          mapping = {
+            "<C-e>" = "cmp.mapping.close()"; #Close list
+
+            # Move up and down on the list with tab and shift tab
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+
+            # Select with enter
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+          };
 
           # Set where it looks to recommmend autocompletes
           sources = [
