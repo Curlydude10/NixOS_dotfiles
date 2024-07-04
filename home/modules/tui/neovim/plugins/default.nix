@@ -5,6 +5,7 @@
     ./treesitter.nix # Better text highlighting
     ./lualine.nix # Status bar 
     ./telescope.nix # Fuzzy searching files
+    ./nvim_tree.nix # File Search
   ];
 
   # Plugin Configuration

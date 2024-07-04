@@ -25,5 +25,8 @@
 
     # Make my terminal look pretty
     neofetch
+
+    # Include ripgrep for fuzzyfinding
+    ripgrep
   ];
 }
