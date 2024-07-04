@@ -16,17 +16,49 @@
       left = "";
       right = "";
     };
-
+    
     # +-------------------------------------------------+
     # | A | B | C                             X | Y | Z |
     # +-------------------------------------------------+
     sections = {
       lualine_a = ["mode"];
       lualine_b = ["branch"];
-      lualine_c = ["filename" "diff"];
+      lualine_c = [ 
+        
+        # Display the filetype smybol 
+        {
+          name = "filetype";
+          extraConfig = {
+            icon_only = true;
+            separator = "";
+            padding = {
+              left = 1;
+              right = 0;
+            };
+          };
+        }
+
+        "filename"
+        
+        # Still cannot get diagnostics to display, cant figure out why
+        {
+          name = "diagnostics";
+          extraConfig = {
+            sources = ["nvim_lsp"];
+            symbols = {
+              error = " ";
+              warn = " ";
+              info = " ";
+              hint = "󰝶 ";
+            };
+          };
+        }
+
+        "diff"
+      ];
 
       lualine_x = [
-        "diagnostics"
+        # Show the problems
 
         # Show active language server
         {
@@ -51,7 +83,6 @@
           color.fg = "#ffffff";
         }
         "encoding"
-        "filetype"
       ];
     };
   };

@@ -1,16 +1,14 @@
 {
   imports = [
     ./lsp.nix # Configure lsp servers
-    ./cmp.nix
-    ./treesitter.nix
-    ./lualine.nix
+    ./cmp.nix # Autocompletion 
+    ./treesitter.nix # Better text highlighting
+    ./lualine.nix # Status bar 
+    ./telescope.nix # Fuzzy searching files
   ];
 
   # Plugin Configuration
   programs.nixvim = {
-    # Color Scheme
-    colorschemes.gruvbox.enable = true;
-
     # Plugins with simple configs
     plugins = {
       # Autopair () {} and []

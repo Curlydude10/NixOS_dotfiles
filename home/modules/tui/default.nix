@@ -22,5 +22,8 @@
     git-crypt # Encrypt repos
     gnupg # Generate keys
     pinentry-curses # input pass
+
+    # Make my terminal look pretty
+    neofetch
   ];
 }
