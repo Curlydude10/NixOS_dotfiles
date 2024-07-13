@@ -23,6 +23,9 @@
 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Include nvidia specific settings
+      ./nvidia.nix
     ];
 
   # Configure nix pakages and overlays

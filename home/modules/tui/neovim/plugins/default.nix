@@ -14,6 +14,15 @@
     plugins = {
       # Autopair () {} and []
       nvim-autopairs.enable = true;
+
+      # Enable git diff signs on code
+      gitsigns = {
+        enable = true;
+        settings.signs = {
+          add.text = "+";
+          change.text = "~";
+        };
+      };
     };
   };
 }
