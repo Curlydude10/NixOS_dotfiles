@@ -17,5 +17,14 @@
 
     # Enable lua loader
     luaLoader.enable = true;
+
+    # Enable git diff signs on code
+    gitsigns = {
+      enable = true;
+      settings.signs = {
+        add.text = "+";
+        change.text = "~";
+      };
+    };
   };
 }

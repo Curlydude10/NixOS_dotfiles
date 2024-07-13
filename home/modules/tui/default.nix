@@ -25,8 +25,11 @@
 
     # Make my terminal look pretty
     neofetch
+    btop
+    bat
 
     # Include ripgrep for fuzzyfinding
+    fzf
     ripgrep
   ];
 }
