@@ -26,6 +26,9 @@
 
       # Include nvidia specific settings
       ./nvidia.nix
+
+      # Enable and setup hyprland
+      ./wayland.nix
     ];
 
   # Configure nix pakages and overlays
