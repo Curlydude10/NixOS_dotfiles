@@ -15,6 +15,7 @@
     bat # better version of cat
     fzf # search files quickly
     ripgrep # better version of grep
+    tree # see file trees
   ];
 
   # Configure bat
