@@ -17,6 +17,7 @@
         # shells with specific servers
         servers = {
           nixd.enable = true;
+          texlab.enable = true;
         };
       };
 
